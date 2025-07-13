@@ -3,121 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>Jan's Treasury</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-      transition: background 0.3s, color 0.3s;
+      height: 100%;
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      font-family: Arial, sans-serif;
+      color: white;
     }
 
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
+    /* 🔁 Background Video as Global Body Layer */
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
     }
 
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+      z-index: -1;
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+      backdrop-filter: blur(0px); /* optional: add blur to content */
+      z-index: 1;
     }
 
-    h1, h2 {
-      color: #444;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .project {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    }
-
-    .project:hover {
-      transform: scale(1.07);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .project img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    form button {
-      background: #222;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    form button:hover {
-      background: #444;
-    }
-
-    footer {
-      background: #222;
-      color: #fff;
+    h1, h2, p {
+      margin: 0.5em 0;
       text-align: center;
-      padding: 15px 0;
     }
 
-    /* ===== Dark Mode Styles ===== */
-    body.dark-mode {
-      background: #1c1c1c;
-      color: #f1f1f1;
-    }
-
-    body.dark-mode header,
-    body.dark-mode footer {
-      background: #000;
-      color: #f1f1f1;
-    }
-
-    body.dark-mode nav a {
-      color: #f1f1f1;
-    }
-
-    body.dark-mode .project {
-      background: #2a2a2a;
-      border-color: #444;
-      box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
-    }
-
-    /* ===== Floating Theme Toggle ===== */
+    /* 🌙/☀️ Toggle */
     #themeToggle {
       position: fixed;
       top: 20px;
@@ -128,7 +66,7 @@
       padding: 10px;
       border-radius: 50%;
       cursor: pointer;
-      z-index: 999;
+      z-index: 10;
       transition: background 0.3s, transform 0.2s;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
@@ -137,66 +75,63 @@
       background: #444;
       transform: rotate(15deg);
     }
+
+    /* === DARK MODE === */
+    body.dark-mode {
+      color: #f1f1f1;
+    }
+
+    body.dark-mode #themeToggle {
+      background: #f1f1f1;
+      color: #1c1c1c;
+    }
+
+    body.dark-mode .overlay {
+      background: rgba(0, 0, 0, 0.7);
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>My Portfolio</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- 🔁 Full Screen Background Video -->
+  <video autoplay muted loop playsinline id="background-video">
+    <source src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/glitter-bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
 
-  <!-- 🌙/☀️ Toggle Button -->
+  <!-- 🌗 Theme Toggle -->
   <div id="themeToggle">🌙</div>
 
-  <section id="about">
+  <!-- Section 1: Welcome -->
+  <section>
+    <h1>Jan's Treasury</h1>
+    <h2>Web Portfolio — Graphic Designer</h2>
+  </section>
+
+  <!-- Section 2: About -->
+  <section>
     <h2>About Me</h2>
     <p>
-      Hello! I'm a passionate web designer/developer who enjoys building clean and creative websites.
-      I specialize in HTML, CSS, JavaScript, and love to explore new technologies.
+      Hi, my name is Fauzan, but you can call me Jann for short.<br />
+      I am a fresh graduate graphic designer.<br />
+      Come check out my works!
     </p>
   </section>
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/project1.png" alt="Project One Image">
-        <h3>Project One</h3>
-        <p>A brief description of your first project.</p>
-      </div>
-      <div class="project">
-        <img src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/project2.png" alt="Project Two Image">
-        <h3>Project Two</h3>
-        <p>A brief description of your second project.</p>
-      </div>
-      <div class="project">
-        <img src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/project3.png" alt="Project Three Image">
-        <h3>Project Three</h3>
-        <p>A brief description of your third project.</p>
-      </div>
-    </div>
+  <!-- Section 3: Portfolio -->
+  <section>
+    <h2>Portfolio</h2>
+    <p>Work showcase coming soon!</p>
   </section>
 
-  <section id="contact">
+  <!-- Section 4: Contact -->
+  <section>
     <h2>Contact Me</h2>
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <p>Email: your@email.com</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-  </footer>
-
-  <!-- JavaScript for Theme Toggle -->
+  <!-- 💡 Theme Toggle Script -->
   <script>
     const toggle = document.getElementById('themeToggle');
 
