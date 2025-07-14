@@ -1,44 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jan's Treasury</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
       font-family: 'Poppins', sans-serif;
       color: white;
     }
 
+    /* 🎥 Background video settings */
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: black;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    section {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    /* 👾 Pixel-style headings */
     h1, h2 {
       font-family: 'Press Start 2P', monospace;
       font-size: 16px;
+      letter-spacing: 1px;
       line-height: 1.8;
+      text-align: center;
     }
 
-    /* ... rest of your CSS ... */
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* 🌗 Theme toggle button */
+    #themeToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      background: #222;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    #themeToggle:hover {
+      background: #444;
+      transform: rotate(15deg);
+    }
+
+    /* 🌒 Dark mode support */
+    body.dark-mode {
+      color: #f1f1f1;
+    }
+
+    body.dark-mode #themeToggle {
+      background: #f1f1f1;
+      color: #1c1c1c;
+    }
+
+    body.dark-mode .overlay {
+      background: rgba(0, 0, 0, 0.7);
+    }
   </style>
 </head>
-
 <body>
 
-  <!-- 🔁 Full Screen Background Video -->
+  <!-- 🎥 Background Video -->
   <video autoplay muted loop playsinline id="background-video">
-<source src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/videos/glitter-bg.mp4" type="video/mp4" />
+    <source src="videos/glitter-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
   <div class="overlay"></div>
 
-  <!-- 🌗 Theme Toggle -->
+  <!-- 🌙/☀️ Dark mode toggle -->
   <div id="themeToggle">🌙</div>
 
-  <!-- Section 1: Welcome -->
+  <!-- 👋 Welcome Section -->
   <section>
     <h1>Jan's Treasury</h1>
     <h2>Web Portfolio — Graphic Designer</h2>
   </section>
 
-  <!-- Section 2: About -->
+  <!-- 🧑‍🎓 About Me -->
   <section>
     <h2>About Me</h2>
     <p>
@@ -48,19 +134,19 @@
     </p>
   </section>
 
-  <!-- Section 3: Portfolio -->
+  <!-- 🖼️ Portfolio Placeholder -->
   <section>
     <h2>Portfolio</h2>
     <p>Work showcase coming soon!</p>
   </section>
 
-  <!-- Section 4: Contact -->
+  <!-- 📬 Contact Section -->
   <section>
     <h2>Contact Me</h2>
     <p>Email: your@email.com</p>
   </section>
 
-  <!-- 💡 Theme Toggle Script -->
+  <!-- 🌗 Dark Mode Script -->
   <script>
     const toggle = document.getElementById('themeToggle');
 
