@@ -15,14 +15,14 @@
     html, body {
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
       font-family: 'Poppins', sans-serif;
       color: white;
       background: black;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    /* 🌌 Background Video */
+    /* Background Video */
     #background-video {
       position: fixed;
       top: 0;
@@ -39,7 +39,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* for readability */
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
 
@@ -49,7 +49,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px;
+      padding: 40px 20px;
       box-sizing: border-box;
       position: relative;
       z-index: 1;
@@ -69,7 +69,6 @@
       max-width: 700px;
     }
 
-    /* 🌙 Dark Mode Toggle */
     #themeToggle {
       position: fixed;
       top: 20px;
@@ -103,7 +102,7 @@
       background: rgba(0, 0, 0, 0.7);
     }
 
-    /* 🖼 Portfolio Grid */
+    /* Portfolio Grid */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -141,22 +140,22 @@
 </head>
 <body>
 
-  <!-- 🎥 Video Background -->
+  <!-- Video Background -->
   <video autoplay muted loop playsinline id="background-video">
     <source src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/videos/glitter-bg.mp4" type="video/mp4" />
   </video>
   <div class="overlay"></div>
 
-  <!-- 🌗 Theme Toggle -->
+  <!-- Dark Mode Toggle -->
   <div id="themeToggle">🌙</div>
 
-  <!-- 🚀 Hero Section -->
+  <!-- Hero Section -->
   <section data-aos="fade-down">
     <h1>Jan's Treasury</h1>
     <h2>Web Portfolio — Graphic Designer</h2>
   </section>
 
-  <!-- 👤 About Section -->
+  <!-- About Me -->
   <section data-aos="fade-up">
     <h2>About Me</h2>
     <p>
@@ -166,7 +165,7 @@
     </p>
   </section>
 
-  <!-- 🖼 Portfolio -->
+  <!-- Portfolio -->
   <section data-aos="zoom-in">
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
@@ -185,13 +184,13 @@
     </div>
   </section>
 
-  <!-- 📬 Contact -->
+  <!-- Contact -->
   <section data-aos="fade-up">
     <h2>Contact Me</h2>
     <p>Email: your@email.com</p>
   </section>
 
-  <!-- 📜 Scripts -->
+  <!-- AOS Script + Dark Mode Logic -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
