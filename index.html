@@ -7,7 +7,6 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     html {
@@ -168,13 +167,13 @@
 <body class="dark-mode">
 
   <!-- Hero -->
-  <section data-aos="fade-down">
+  <section>
     <h1>Jan's Treasury</h1>
     <h2>Web Portfolio — Graphic Designer</h2>
   </section>
 
   <!-- About -->
-  <section data-aos="fade-up">
+  <section>
     <h2>About Me</h2>
     <p>
       Hi, my name is Fauzan, but you can call me Jann for short.<br />
@@ -184,7 +183,7 @@
   </section>
 
   <!-- Portfolio -->
-  <section data-aos="zoom-in">
+  <section>
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
       <div class="project-card" onclick="openModal(1)">
@@ -225,16 +224,13 @@
   </div>
 
   <!-- Contact -->
-  <section data-aos="fade-up">
+  <section>
     <h2>Contact Me</h2>
     <p>Email: fauzanraziqrohim@gmail.com</p>
   </section>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-
     function openModal(id) {
       document.getElementById('modal' + id).classList.add('active');
     }
