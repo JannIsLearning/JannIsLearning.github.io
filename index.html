@@ -58,6 +58,60 @@
       max-width: 700px;
     }
 
+    /* About Section Layout */
+    .about-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .about-image img {
+      max-height: 80vh;
+      width: auto;
+      max-width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .about-text h2 {
+      font-size: 20px;
+      font-family: 'Press Start 2P', monospace;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
+      .about-image img {
+        max-height: 60vh;
+      }
+    }
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -172,16 +226,22 @@
     <h2>Web Portfolio — Graphic Designer</h2>
   </section>
 
-<!-- About -->
-<section>
-  <h2>About Me</h2>
-  <img src="images/aboutme.webp" alt="Photo of Jann" style="max-width: 300px; border-radius: 10px; margin: 20px 0;" />
-  <p>
-    Hi, my name is Fauzan, but you can call me Jann for short.<br />
-    I am a fresh graduate graphic designer.<br />
-    Come check out my works!
-  </p>
-</section>
+  <!-- About -->
+  <section>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/aboutme.webp" alt="Photo of Jann">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi, my name is Fauzan, but you can call me Jann for short.<br><br>
+          I am a fresh graduate graphic designer based in Malaysia.<br><br>
+          I specialize in creative layout, visual storytelling, and branding. Come check out my works!
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Portfolio -->
   <section>
