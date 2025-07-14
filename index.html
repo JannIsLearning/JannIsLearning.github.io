@@ -22,6 +22,17 @@
       scroll-behavior: smooth;
     }
 
+    /* 👇 Scroll snap for desktop only */
+    @media (min-width: 768px) {
+      html, body {
+        scroll-snap-type: y mandatory;
+      }
+
+      section {
+        scroll-snap-align: start;
+      }
+    }
+
     #background-video {
       position: fixed;
       top: 0;
@@ -211,7 +222,7 @@
 </head>
 <body>
 
-  <!-- Background Video -->
+  <!-- Video Background -->
   <video autoplay muted loop playsinline id="background-video">
     <source src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/videos/glitter-bg.mp4" type="video/mp4" />
   </video>
@@ -304,7 +315,7 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // Modal Controls
+    // Modal controls
     function openModal(id) {
       document.getElementById('modal' + id).classList.add('active');
     }
