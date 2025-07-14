@@ -181,14 +181,16 @@
   </style>
 </head>
 
-<body class="dark-mode">
-
-  <video autoplay muted loop playsinline id="background-video">
-    <source src="videos/glitter-bg.mp4" type="video/mp4" />
-  </video>
-  <div class="overlay"></div>
-
-
+body {
+  background: url("images/bg.webp") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #f1f1f1;
+  overflow-x: hidden;
+}
+  
   <!-- Hero -->
   <section data-aos="fade-down">
     <h1>Jan's Treasury</h1>
