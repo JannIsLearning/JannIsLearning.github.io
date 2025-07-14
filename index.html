@@ -145,6 +145,7 @@
       margin: 0;
     }
 
+    /* Modal Styles */
     .modal {
       position: fixed;
       top: 0;
@@ -154,7 +155,7 @@
       display: none;
       align-items: center;
       justify-content: center;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.9);
       z-index: 20;
       padding: 20px;
     }
@@ -164,23 +165,22 @@
     }
 
     .modal-content {
-      max-width: 600px;
-      background: #111;
-      border-radius: 10px;
-      padding: 20px;
+      max-width: 95vw;
+      max-height: 95vh;
+      overflow: auto;
+      background: transparent;
+      padding: 10px;
       text-align: center;
-      box-shadow: 0 0 30px rgba(255,255,255,0.2);
+      border-radius: 10px;
     }
 
-    .modal-content img {
-      width: 100%;
+    .modal-image {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 90vh;
       border-radius: 6px;
-      margin-bottom: 15px;
-    }
-
-    .modal-content p {
-      font-size: 15px;
-      margin-top: 0;
+      box-shadow: 0 0 20px rgba(255,255,255,0.15);
     }
 
     .close-modal {
@@ -219,18 +219,22 @@
 </head>
 <body>
 
+  <!-- Background -->
   <video autoplay muted loop playsinline id="background-video">
     <source src="https://raw.githubusercontent.com/JannIsLearning/JannIsLearning.github.io/main/videos/glitter-bg.mp4" type="video/mp4" />
   </video>
   <div class="overlay"></div>
 
+  <!-- Dark Mode -->
   <div id="themeToggle">🌙</div>
 
+  <!-- Hero -->
   <section data-aos="fade-down">
     <h1>Jan's Treasury</h1>
     <h2>Web Portfolio — Graphic Designer</h2>
   </section>
 
+  <!-- About -->
   <section data-aos="fade-up">
     <h2>About Me</h2>
     <p>
@@ -240,7 +244,7 @@
     </p>
   </section>
 
-  <!-- ✅ Portfolio with images from /images/ -->
+  <!-- Portfolio -->
   <section data-aos="zoom-in">
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
@@ -259,31 +263,29 @@
     </div>
   </section>
 
-  <!-- ✅ Modals with image paths updated -->
+  <!-- Modals with full artwork -->
   <div class="modal" id="modal1">
     <div class="modal-content">
-      <img src="images/project1.webp" alt="Project 1 Full">
-      <p>This is more information about Project One.</p>
+      <img src="images/project1.webp" alt="Project 1 Full" class="modal-image">
       <button class="close-modal" onclick="closeModal()">Close</button>
     </div>
   </div>
 
   <div class="modal" id="modal2">
     <div class="modal-content">
-      <img src="images/project2.webp" alt="Project 2 Full">
-      <p>This is more information about Project Two.</p>
+      <img src="images/project2.webp" alt="Project 2 Full" class="modal-image">
       <button class="close-modal" onclick="closeModal()">Close</button>
     </div>
   </div>
 
   <div class="modal" id="modal3">
     <div class="modal-content">
-      <img src="images/project3.webp" alt="Project 3 Full">
-      <p>This is more information about Project Three.</p>
+      <img src="images/project3.webp" alt="Project 3 Full" class="modal-image">
       <button class="close-modal" onclick="closeModal()">Close</button>
     </div>
   </div>
 
+  <!-- Contact -->
   <section data-aos="fade-up">
     <h2>Contact Me</h2>
     <p>Email: your@email.com</p>
