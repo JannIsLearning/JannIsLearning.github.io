@@ -7,6 +7,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     html {
@@ -45,11 +46,18 @@
       backdrop-filter: brightness(0.9);
     }
 
-    h1, h2 {
+    h1 {
       font-family: 'Press Start 2P', monospace;
-      font-size: 16px;
+      font-size: 24px;
       line-height: 1.8;
       margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 0;
     }
 
     p {
@@ -58,63 +66,36 @@
       max-width: 700px;
     }
 
-    /* About Section Layout */
-    .about-container {
+    .about-content {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 40px;
-      max-width: 1200px;
-      width: 100%;
-      flex-wrap: wrap;
+      gap: 30px;
     }
 
     .about-image {
-      flex: 1;
-      min-width: 250px;
+      max-width: 300px;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     }
 
-    .about-image img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  max-height: 80vh;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-}
+    @media(min-width: 768px) {
+      .about-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+      }
 
-    .about-text {
-      flex: 1;
-      min-width: 280px;
-      max-width: 500px;
-      text-align: left;
-    }
-
-    .about-text h2 {
-      font-size: 20px;
-      font-family: 'Press Start 2P', monospace;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .about-container {
-        flex-direction: column;
-        text-align: center;
+      .about-image {
+        max-width: 350px;
+        height: auto;
       }
 
       .about-text {
-        text-align: center;
-      }
-
-      .about-image img {
-        max-height: 60vh;
+        max-width: 500px;
+        text-align: left;
       }
     }
 
@@ -205,7 +186,11 @@
     }
 
     @media (max-width: 600px) {
-      h1, h2 {
+      h1 {
+        font-size: 18px;
+      }
+
+      h2 {
         font-size: 12px;
       }
 
@@ -229,21 +214,18 @@
   <!-- Hero -->
   <section>
     <h1>Jan's Treasury</h1>
-    <h2>Web Portfolio — Graphic Designer</h2>
+    <h2>A Web Portfolio</h2>
   </section>
 
   <!-- About -->
   <section>
-    <div class="about-container">
-      <div class="about-image">
-        <img src="images/aboutme.webp" alt="Photo of Jann">
-      </div>
+    <div class="about-content">
+      <img src="images/aboutme.webp" alt="About Me" class="about-image" />
       <div class="about-text">
         <h2>About Me</h2>
         <p>
-          Hi, my name is Fauzan, but you can call me Jann for short.<br><br>
-          I am a fresh graduate graphic designer based in Malaysia.<br><br>
-          I specialize in creative layout, visual storytelling, and branding.<br><br>
+          Hi, my name is Fauzan, but you can call me Jann for short.<br />
+          I am a fresh graduate graphic designer.<br />
           Come check out my works!
         </p>
       </div>
@@ -298,7 +280,10 @@
   </section>
 
   <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init();
+
     function openModal(id) {
       document.getElementById('modal' + id).classList.add('active');
     }
