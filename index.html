@@ -7,7 +7,6 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     html {
@@ -52,42 +51,15 @@
       margin-bottom: 10px;
     }
 
-    .subtitle {
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 300;
-      margin: 0;
-    }
-
     h2 {
-      font-family: 'Press Start 2P', monospace;
       font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 10px;
+      margin: 10px 0;
     }
 
     p {
       font-size: 16px;
       line-height: 1.6;
       max-width: 700px;
-    }
-
-    .about-section {
-      flex-direction: row;
-      gap: 40px;
-    }
-
-    .about-img {
-      flex: 1;
-      max-width: 400px;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: 12px;
-    }
-
-    .about-text {
-      flex: 1;
-      text-align: left;
     }
 
     .portfolio-grid {
@@ -176,25 +148,9 @@
       background: #444;
     }
 
-    @media (max-width: 768px) {
-      .about-section {
-        flex-direction: column;
-      }
-
-      .about-img {
-        width: 100%;
-      }
-
-      .about-text {
-        text-align: center;
-      }
-
+    @media (max-width: 600px) {
       h1 {
         font-size: 18px;
-      }
-
-      .subtitle {
-        font-size: 12px;
       }
 
       h2 {
@@ -208,71 +164,68 @@
       .project-card img {
         height: 140px;
       }
+
+      .modal-content {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
-<body class="dark-mode">
+<body>
 
   <!-- Hero -->
   <section>
     <h1>Jan's Treasury</h1>
-    <h2 class="subtitle">A Web Portfolio</h2>
+    <h2>a web portfolio</h2>
   </section>
 
   <!-- About -->
-  <section class="about-section">
-    <img src="images/aboutme.webp" alt="About Me" class="about-img" />
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        Hi, my name is Fauzan, but you can call me Jann for short.<br />
-        I am a fresh graduate graphic designer.<br />
-        Come check out my works!
-      </p>
-    </div>
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Hi, my name is Fauzan, but you can call me Jann for short.<br />
+      I am a fresh graduate graphic designer.<br />
+      Come check out my works!
+    </p>
   </section>
 
   <!-- Portfolio -->
   <section>
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
-      <div class="project-card" onclick="openModal(1)">
-        <img src="images/project1.webp" alt="Project One">
-        <p>Project One</p>
-      </div>
-      <div class="project-card" onclick="openModal(2)">
-        <img src="images/project2.webp" alt="Project Two">
-        <p>Project Two</p>
-      </div>
-      <div class="project-card" onclick="openModal(3)">
-        <img src="images/project3.webp" alt="Project Three">
-        <p>Project Three</p>
-      </div>
+      <!-- Project cards 1 to 15 -->
+      <!-- They all use images/projectX.webp and openModal(X) -->
+      <!-- We loop through 1-15 -->
+      <!-- You can customize the titles if needed -->
+      <!-- Start loop -->
+      <!-- Paste each project card -->
+      <!-- JS will handle the modal opening -->
+      <!-- Below is dynamic loop manually filled -->
+      ${[...Array(15)].map((_, i) => {
+        const num = i + 1;
+        return `
+        <div class="project-card" onclick="openModal(${num})">
+          <img src="images/project${num}.webp" alt="Project ${num}">
+          <p>Project ${num}</p>
+        </div>
+        `;
+      }).join('')}
     </div>
   </section>
 
-  <!-- Modals -->
-  <div class="modal" id="modal1">
-    <div class="modal-content">
-      <img src="images/project1.webp" alt="Project 1 Full" class="modal-image">
-      <button class="close-modal" onclick="closeModal()">Close</button>
+  <!-- Modals for each project -->
+  ${[...Array(15)].map((_, i) => {
+    const num = i + 1;
+    return `
+    <div class="modal" id="modal${num}">
+      <div class="modal-content">
+        <img src="images/project${num}.webp" alt="Project ${num} Full" class="modal-image">
+        <button class="close-modal" onclick="closeModal()">Close</button>
+      </div>
     </div>
-  </div>
-
-  <div class="modal" id="modal2">
-    <div class="modal-content">
-      <img src="images/project2.webp" alt="Project 2 Full" class="modal-image">
-      <button class="close-modal" onclick="closeModal()">Close</button>
-    </div>
-  </div>
-
-  <div class="modal" id="modal3">
-    <div class="modal-content">
-      <img src="images/project3.webp" alt="Project 3 Full" class="modal-image">
-      <button class="close-modal" onclick="closeModal()">Close</button>
-    </div>
-  </div>
+    `;
+  }).join('')}
 
   <!-- Contact -->
   <section>
@@ -280,7 +233,7 @@
     <p>Email: fauzanraziqrohim@gmail.com</p>
   </section>
 
-  <!-- Scripts -->
+  <!-- Script -->
   <script>
     function openModal(id) {
       document.getElementById('modal' + id).classList.add('active');
@@ -290,6 +243,5 @@
       document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
     }
   </script>
-
 </body>
 </html>
