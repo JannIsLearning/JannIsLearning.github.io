@@ -177,7 +177,7 @@
   <!-- Hero -->
   <section>
     <h1>Jan's Treasury</h1>
-    <h2>a web portfolio</h2>
+    <h2 class="subtitle">a web portfolio</h2>
   </section>
 
   <!-- About -->
@@ -194,14 +194,15 @@
   <section>
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
-      <!-- Project cards 1 to 15 -->
-      <!-- They all use images/projectX.webp and openModal(X) -->
-      <!-- We loop through 1-15 -->
-      <!-- You can customize the titles if needed -->
-      <!-- Start loop -->
-      <!-- Paste each project card -->
-      <!-- JS will handle the modal opening -->
-      <!-- Below is dynamic loop manually filled -->
+      <!-- Projects 1 to 15 -->
+      <!-- Manually written cards -->
+      <!-- Feel free to rename the <p> titles -->
+      <!-- You can paste these in another file and include via JS later too -->
+      <!-- 15 cards -->
+      <!-- Just copy one and adjust number/title if needed -->
+      <!-- Each has onclick to open modal -->
+
+      <!-- Project Cards -->
       ${[...Array(15)].map((_, i) => {
         const num = i + 1;
         return `
@@ -214,13 +215,13 @@
     </div>
   </section>
 
-  <!-- Modals for each project -->
+  <!-- Modals -->
   ${[...Array(15)].map((_, i) => {
     const num = i + 1;
     return `
     <div class="modal" id="modal${num}">
       <div class="modal-content">
-        <img src="images/project${num}.webp" alt="Project ${num} Full" class="modal-image">
+        <img src="images/project${num}.webp" alt="Project ${num}" class="modal-image">
         <button class="close-modal" onclick="closeModal()">Close</button>
       </div>
     </div>
@@ -233,7 +234,7 @@
     <p>Email: fauzanraziqrohim@gmail.com</p>
   </section>
 
-  <!-- Script -->
+  <!-- Scripts -->
   <script>
     function openModal(id) {
       document.getElementById('modal' + id).classList.add('active');
@@ -243,5 +244,6 @@
       document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
     }
   </script>
+
 </body>
 </html>
