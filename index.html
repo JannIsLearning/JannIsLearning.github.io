@@ -49,15 +49,21 @@
     h1 {
       font-family: 'Press Start 2P', monospace;
       font-size: 24px;
-      line-height: 1.8;
       margin-bottom: 10px;
     }
 
-    h2 {
+    .subtitle {
       font-family: 'Poppins', sans-serif;
       font-size: 14px;
       font-weight: 300;
-      margin-top: 0;
+      margin: 0;
+    }
+
+    h2 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 10px;
     }
 
     p {
@@ -66,37 +72,22 @@
       max-width: 700px;
     }
 
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
+    .about-section {
+      flex-direction: row;
+      gap: 40px;
     }
 
-    .about-image {
-      max-width: 300px;
-      width: 80%;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    .about-img {
+      flex: 1;
+      max-width: 400px;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 12px;
     }
 
-    @media(min-width: 768px) {
-      .about-content {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 60px;
-      }
-
-      .about-image {
-        max-width: 350px;
-        height: auto;
-      }
-
-      .about-text {
-        max-width: 500px;
-        text-align: left;
-      }
+    .about-text {
+      flex: 1;
+      text-align: left;
     }
 
     .portfolio-grid {
@@ -185,13 +176,29 @@
       background: #444;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+      }
+
+      .about-img {
+        width: 100%;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
       h1 {
         font-size: 18px;
       }
 
-      h2 {
+      .subtitle {
         font-size: 12px;
+      }
+
+      h2 {
+        font-size: 14px;
       }
 
       p {
@@ -200,10 +207,6 @@
 
       .project-card img {
         height: 140px;
-      }
-
-      .modal-content {
-        width: 100%;
       }
     }
   </style>
@@ -214,21 +217,19 @@
   <!-- Hero -->
   <section>
     <h1>Jan's Treasury</h1>
-    <h2>A Web Portfolio</h2>
+    <h2 class="subtitle">A Web Portfolio</h2>
   </section>
 
   <!-- About -->
-  <section>
-    <div class="about-content">
-      <img src="images/aboutme.webp" alt="About Me" class="about-image" />
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>
-          Hi, my name is Fauzan, but you can call me Jann for short.<br />
-          I am a fresh graduate graphic designer.<br />
-          Come check out my works!
-        </p>
-      </div>
+  <section class="about-section">
+    <img src="images/aboutme.webp" alt="About Me" class="about-img" />
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Hi, my name is Fauzan, but you can call me Jann for short.<br />
+        I am a fresh graduate graphic designer.<br />
+        Come check out my works!
+      </p>
     </div>
   </section>
 
@@ -280,10 +281,7 @@
   </section>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-
     function openModal(id) {
       document.getElementById('modal' + id).classList.add('active');
     }
