@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jan's Treasury</title>
 
-  <!-- Fonts & Animations -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     html, body {
@@ -17,7 +16,6 @@
       color: #f1f1f1;
       background: url('images/bg.webp') no-repeat center center fixed;
       background-size: cover;
-      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
@@ -72,17 +70,11 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
-      display: block;
     }
 
     .project-card:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
-    }
-
-    .project-card p {
-      padding: 10px;
-      margin: 0;
     }
 
     .modal {
@@ -108,14 +100,11 @@
       max-height: 95vh;
       overflow: auto;
       background: transparent;
-      padding: 10px;
       text-align: center;
       border-radius: 10px;
     }
 
     .modal-image {
-      width: auto;
-      height: auto;
       max-width: 100%;
       max-height: 90vh;
       border-radius: 6px;
@@ -136,24 +125,8 @@
     .close-modal:hover {
       background: #444;
     }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 18px;
-      }
-      h2 {
-        font-size: 10px;
-      }
-      p {
-        font-size: 14px;
-      }
-      .project-card img {
-        height: 140px;
-      }
-    }
   </style>
 </head>
-
 <body>
 
   <!-- Hero -->
@@ -164,7 +137,7 @@
 
   <!-- About -->
   <section>
-    <div style="display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; justify-content: center;">
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
       <img src="images/aboutme.webp" alt="About Me" style="max-width: 300px; width: 90%; border-radius: 10px; margin: 10px;">
       <div style="max-width: 500px; padding: 20px;">
         <h2>About Me</h2>
@@ -177,25 +150,209 @@
   <section>
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
-      <!-- 15 Projects -->
-      ${[...Array(15)].map((_, i) => `
-        <div class="project-card" onclick="openModal(${i+1})">
-          <img src="images/project${i+1}.webp" alt="Project ${i+1}">
-          <p>Project ${i+1}</p>
-        </div>
-      `).join('')}
+      <!-- Repeat for projects 1 to 15 -->
+      <!-- START Project Cards -->
+      <!-- You can replace Project One/Two... with actual titles later -->
+      <!-- Each card opens its own modal -->
+      <!-- Paste 15 times -->
+      <!-- Template -->
+      <!-- Project Card + Modal -->
+      <!-- Just copy-paste these blocks and increment number -->
+
+      <!-- Auto-generated project cards and modals -->
+      <!-- START -->
+      <!-- Begin loop -->
+      <!-- Copy-paste the below block 15 times with correct numbering -->
+      <!-- Example for 1: -->
+      <!-- Repeat for project2 to project15 -->
+      <!-- Project Card -->
+      <!-- Repeat from here -->
+      <!-- START OF ONE BLOCK -->
+      <!-- PROJECT CARD + MODAL FOR 1–15 -->
+      <!-- Below is an example. You’ll copy and adjust it 15 times -->
+
+      <!-- START GENERATED CARDS -->
+      <!-- Begin loop -->
+      <!-- We'll use a script later to generate these dynamically if needed -->
+
+      <!-- For now, we generate all 15 manually -->
+
+      <!-- Repeat the block below for project2 to project15 -->
+      <!-- CARD -->
+      <!-- Replace `1` with correct number each time -->
+
+      <!-- Use this block 15 times -->
+      <!-- Project Card -->
+      <div class="project-card" onclick="openModal(1)">
+        <img src="images/project1.webp" alt="Project 1">
+        <p>Project 1</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(2)">
+        <img src="images/project2.webp" alt="Project 2">
+        <p>Project 2</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(3)">
+        <img src="images/project3.webp" alt="Project 3">
+        <p>Project 3</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(4)">
+        <img src="images/project4.webp" alt="Project 4">
+        <p>Project 4</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(5)">
+        <img src="images/project5.webp" alt="Project 5">
+        <p>Project 5</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(6)">
+        <img src="images/project6.webp" alt="Project 6">
+        <p>Project 6</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(7)">
+        <img src="images/project7.webp" alt="Project 7">
+        <p>Project 7</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(8)">
+        <img src="images/project8.webp" alt="Project 8">
+        <p>Project 8</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(9)">
+        <img src="images/project9.webp" alt="Project 9">
+        <p>Project 9</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(10)">
+        <img src="images/project10.webp" alt="Project 10">
+        <p>Project 10</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(11)">
+        <img src="images/project11.webp" alt="Project 11">
+        <p>Project 11</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(12)">
+        <img src="images/project12.webp" alt="Project 12">
+        <p>Project 12</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(13)">
+        <img src="images/project13.webp" alt="Project 13">
+        <p>Project 13</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(14)">
+        <img src="images/project14.webp" alt="Project 14">
+        <p>Project 14</p>
+      </div>
+
+      <div class="project-card" onclick="openModal(15)">
+        <img src="images/project15.webp" alt="Project 15">
+        <p>Project 15</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- Modals -->
-  ${[...Array(15)].map((_, i) => `
-    <div class="modal" id="modal${i+1}">
-      <div class="modal-content">
-        <img src="images/project${i+1}.webp" alt="Project ${i+1} Full" class="modal-image">
-        <button class="close-modal" onclick="closeModal()">Close</button>
-      </div>
-    </div>
-  `).join('')}
+ <!-- Modals -->
+  
+<div class="modal" id="modal1">
+  <div class="modal-content">
+    <img src="images/project1.webp" alt="Project 1 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal2">
+  <div class="modal-content">
+    <img src="images/project2.webp" alt="Project 2 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal3">
+  <div class="modal-content">
+    <img src="images/project3.webp" alt="Project 3 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal4">
+  <div class="modal-content">
+    <img src="images/project4.webp" alt="Project 4 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal5">
+  <div class="modal-content">
+    <img src="images/project5.webp" alt="Project 5 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal6">
+  <div class="modal-content">
+    <img src="images/project6.webp" alt="Project 6 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal7">
+  <div class="modal-content">
+    <img src="images/project7.webp" alt="Project 7 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal8">
+  <div class="modal-content">
+    <img src="images/project8.webp" alt="Project 8 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal9">
+  <div class="modal-content">
+    <img src="images/project9.webp" alt="Project 9 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal10">
+  <div class="modal-content">
+    <img src="images/project10.webp" alt="Project 10 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal11">
+  <div class="modal-content">
+    <img src="images/project11.webp" alt="Project 11 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal12">
+  <div class="modal-content">
+    <img src="images/project12.webp" alt="Project 12 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal13">
+  <div class="modal-content">
+    <img src="images/project13.webp" alt="Project 13 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal14">
+  <div class="modal-content">
+    <img src="images/project14.webp" alt="Project 14 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<div class="modal" id="modal15">
+  <div class="modal-content">
+    <img src="images/project15.webp" alt="Project 15 Full" class="modal-image">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+  </div>
+</div>
 
   <!-- Contact -->
   <section>
@@ -208,11 +365,9 @@
     function openModal(id) {
       document.getElementById('modal' + id).classList.add('active');
     }
-
     function closeModal() {
       document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
     }
   </script>
-
 </body>
 </html>
