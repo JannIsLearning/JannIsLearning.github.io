@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jan's Treasury</title>
 
-  <!-- Fonts -->
+  <!-- Fonts & Animations -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
@@ -21,16 +18,7 @@
       background: url('images/bg.webp') no-repeat center center fixed;
       background-size: cover;
       overflow-x: hidden;
-    }
-
-    @media (min-width: 768px) {
-      html, body {
-        scroll-snap-type: y mandatory;
-      }
-
-      section {
-        scroll-snap-align: start;
-      }
+      scroll-behavior: smooth;
     }
 
     section {
@@ -47,13 +35,14 @@
 
     h1 {
       font-family: 'Press Start 2P', monospace;
-      font-size: 24px;
+      font-size: 26px;
       margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 16px;
-      margin: 10px 0;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
 
     p {
@@ -64,7 +53,7 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       width: 100%;
       max-width: 1000px;
@@ -152,21 +141,14 @@
       h1 {
         font-size: 18px;
       }
-
       h2 {
-        font-size: 14px;
+        font-size: 10px;
       }
-
       p {
         font-size: 14px;
       }
-
       .project-card img {
         height: 140px;
-      }
-
-      .modal-content {
-        width: 100%;
       }
     }
   </style>
@@ -177,56 +159,43 @@
   <!-- Hero -->
   <section>
     <h1>Jan's Treasury</h1>
-    <h2 class="subtitle">a web portfolio</h2>
+    <h2>a web portfolio</h2>
   </section>
 
   <!-- About -->
   <section>
-    <h2>About Me</h2>
-    <p>
-      Hi, my name is Fauzan, but you can call me Jann for short.<br />
-      I am a fresh graduate graphic designer.<br />
-      Come check out my works!
-    </p>
+    <div style="display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; justify-content: center;">
+      <img src="images/aboutme.webp" alt="About Me" style="max-width: 300px; width: 90%; border-radius: 10px; margin: 10px;">
+      <div style="max-width: 500px; padding: 20px;">
+        <h2>About Me</h2>
+        <p>Hi, my name is Fauzan, but you can call me Jann for short.<br/>I am a fresh graduate graphic designer.<br/>Come check out my works!</p>
+      </div>
+    </div>
   </section>
 
   <!-- Portfolio -->
   <section>
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
-      <!-- Projects 1 to 15 -->
-      <!-- Manually written cards -->
-      <!-- Feel free to rename the <p> titles -->
-      <!-- You can paste these in another file and include via JS later too -->
-      <!-- 15 cards -->
-      <!-- Just copy one and adjust number/title if needed -->
-      <!-- Each has onclick to open modal -->
-
-      <!-- Project Cards -->
-      ${[...Array(15)].map((_, i) => {
-        const num = i + 1;
-        return `
-        <div class="project-card" onclick="openModal(${num})">
-          <img src="images/project${num}.webp" alt="Project ${num}">
-          <p>Project ${num}</p>
+      <!-- 15 Projects -->
+      ${[...Array(15)].map((_, i) => `
+        <div class="project-card" onclick="openModal(${i+1})">
+          <img src="images/project${i+1}.webp" alt="Project ${i+1}">
+          <p>Project ${i+1}</p>
         </div>
-        `;
-      }).join('')}
+      `).join('')}
     </div>
   </section>
 
   <!-- Modals -->
-  ${[...Array(15)].map((_, i) => {
-    const num = i + 1;
-    return `
-    <div class="modal" id="modal${num}">
+  ${[...Array(15)].map((_, i) => `
+    <div class="modal" id="modal${i+1}">
       <div class="modal-content">
-        <img src="images/project${num}.webp" alt="Project ${num}" class="modal-image">
+        <img src="images/project${i+1}.webp" alt="Project ${i+1} Full" class="modal-image">
         <button class="close-modal" onclick="closeModal()">Close</button>
       </div>
     </div>
-    `;
-  }).join('')}
+  `).join('')}
 
   <!-- Contact -->
   <section>
